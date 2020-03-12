@@ -6,7 +6,7 @@ public class Main {
     /**
      * Remember! This is where the program starts, I'm going to make a few methods in here that will perform the
      * needed functions for ex 1, 2 and 3. I've separated everything out into methods so it's easier to understand,
-     * and it gets you more used to how methods work
+     * and it gets you more used to how methods work. The main function will literally just run all the exercies for you
      */
     public static void main(String[] args) {
         PracticalExercise1();
