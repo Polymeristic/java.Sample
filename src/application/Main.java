@@ -68,7 +68,7 @@ public class Main {
 
     /**
      * This one is a lot simpler, we simply need to calculate:
-     * -> convert cm to m (easy, just divide by 100) then square it
+     * -> convert cm to m (easy, just divide by 100)
      * -> calculate bmi with weight/height^2 (the ^ means to the power of, i.e, ^2 is squared)
      *
      * Again, we will use another method double getBmi(double height, double weight) to calculate so you can get used
