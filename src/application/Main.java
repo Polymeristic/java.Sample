@@ -9,6 +9,8 @@ public class Main {
      * and it gets you more used to how methods work
      */
     public static void main(String[] args) {
+        PracticalExercise1();
+        PracticalExercise2();
         PracticalExercise3();
     }
 
