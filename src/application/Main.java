@@ -139,7 +139,7 @@ public class Main {
         // Similar to the hours, but what we want to to is get the total minutes elapsed then get how many minutes have
         // passed since the past hour. To do that we use the modulo operator. It's hard to explain but I'll give a demo:
         // -> If we have 4500 seconds, that equates to 75 minutes. 75 is what we get if we do seconds/60
-        // -> Thing is, we dont want to say 75 minutes because we have hours to. If we take out the hour, we get 15 minutes - great!
+        // -> Thing is, we dont want to say 75 minutes because we have hours too. If we take out the hour, we get 15 minutes - great!
         // -> To get this we use the % operator, so we do 75 % 60 -> this'll equal 15
         // -> What the % operator does is divide 75 by 60, then gets the left over value that can't be divided more
         //    , so 75 / 60 = 1r15, because 15 can't be divided more
