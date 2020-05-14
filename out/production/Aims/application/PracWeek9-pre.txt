@@ -1,0 +1,128 @@
+
+1. Explain the difference between early and late binding.
+
+    Early binding is when methods or properties are bound at compile time, late binding is when
+    they are bound at runtime.
+
+2. What is polymorphism and how does it relate to late binding?
+
+    When overriding a method using polymorphism, unless it is a static method, the method will be
+    bound in the inheriting class at runtime (late binding)
+
+3. What are the advantages of polymorphism?
+
+    It allows for code reuse, method overriding, storing multiple types as a single parent type
+
+4. Write a decision statement to determine if an object should be downcast.
+
+    if (someObject instanceOf SomeType) {
+        SomeType someObjectAsType = (SomeType) someObject;
+    }
+
+5. Describe the limitations of the copy constructor.
+
+    In polymorphism copy constructors do not get inherited by a child class from a parent class,
+    and if we try to copy a upcast type (eg, Shape) using a child type (eg, Rectangle) to try and get
+    a new Rectangle, this would not work and would give a compilation error. Example:
+
+        Shape rect = new Rectangle();
+        Shape newRect = new Rectangle(rect);    // Will fail
+
+6. What is an abstract method?
+
+    An abstract method is a method that is declared, but not implemented
+
+7. What is wrong with the following method definition? public abstract void doSomething(int count)
+
+    It needs a semi-colon
+
+8. Why should the instanceOf operator be used in conjunction with downcasting?
+
+    To ensure that an object can successfully be downcast
+
+9. Draw an inheritance hierarchy to represent a shoe object. The base class should have derived classes of Dress Shoes, Tennis Shoes and Boots.
+
+                     Shoe
+                       |
+          ---------------------------
+          |            |            |
+    Dress Shoes   Tennis Shoes    Boots
+
+10. Implement the base class in the shoe hierarchy in number 8 above.
+
+    class Shoe {
+        private int size;
+
+        public class Shoe (int size) {
+            this.size = size;
+        }
+
+        public abstract Shoe clone();
+
+        public int getSize() { return size; }
+        public void setSize(int size) { this.size = size; }
+    }
+
+11. Derive a class named Dress Shoes from the base class created in number 9 above.
+
+    class DressShoe extends Shoe { 
+
+        public class DressShoe (int size) {
+            super(size);
+        }
+    }
+
+12. Derive a class named Tennis Shoes from the base class created in number 9 above.
+
+    class TennisShoe extends Shoe { 
+
+        public class DressShoe (int size) {
+            super(size);
+        }
+    }
+
+13. Derive a class named Boots from the base class created in number 9 above.
+
+    class Boots extends Shoe { 
+
+        public class DressShoe (int size) {
+            super(size);
+        }
+    }
+
+14. Override the clone method inherited in the Dress Shoes class created in number 10 above.
+
+    @Override
+    public DressShoe clone (Shoe obj) {
+        if (obj instanceOf DressShoe) {
+            DressShoe newShoe = new DressShoe(obj.getSize());
+            return newShoe;
+        } else {
+            return null;
+        }
+    }
+
+15. Override the clone method inherited in the Tennis Shoes class created in number 11 above.
+
+    @Override
+    public TennisShoe clone (Shoe obj) {
+        if (obj instanceOf TennisShoe) {
+            TennisShoe newShoe = new TennisShoe(obj.getSize());
+            return newShoe;
+        } else {
+            return null;
+        }
+    }
+
+16. Override the clone method inherited in the Boots class created in number 12 above.
+
+    @Override
+    public Boots clone (Shoe obj) {
+        if (obj instanceOf Boots) {
+            Boots newShoe = new TennisShoe(Boots.getSize());
+            return newShoe;
+        } else {
+            return null;
+        }
+    }
+ 

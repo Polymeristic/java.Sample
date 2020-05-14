@@ -1,0 +1,157 @@
+
+1. Write a Java statement that declares and creates an array of Strings named Breeds. Your array  should be large enough to hold the names of 100 dog breeds.
+
+    String[] Breeds = new String[100];
+
+
+2. Declare and create an integer array that will contain the numbers 1 through 100. Use a for loop to initialize the indexed variables.
+    int[] numbers = new int[99];
+
+    for (int i = 1; i <= 100; i++) {
+        numbers[i - 1] = i;
+    }
+
+
+3. What are three ways you can use the square brackets [ ] with an array name?
+
+    int[] a;                // initialize an array in memory
+    int[] a = new int[10];  // set size of array
+    a[5];                   // access array element
+
+
+
+4. Given the following character array, char[] h = {‘H’, ‘E’, ‘L’, ‘L’, ‘O’}; Write a Java statement that will create a new String object from the character array.
+
+    String name = new String(h);
+
+
+5. Write a Java method that takes an integer array as a formal parameter and returns the sum of integers contained within the array.
+
+    public static int arraySum(int[] array) {
+        int s = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            s += array[i];
+        }
+
+        return s;
+    }
+
+
+6. How are arrays tested to see if they contain the same contents?
+
+    Firstly, the type should be checked, then the length, and finally an interation over all values to see if each value at each respective index is the same.
+
+
+7. Explain what the main methods array parameter, args, is used for.
+
+    String[] args is used to pass arguments to the program via the command line
+
+
+8. Write a Java method as well as any facilitator methods needed to perform a sort on an array of whole numbers in descending order.
+
+    public static void sort(int[] nums) {
+        boolean sorted = false;
+
+        while (!sorted) {
+            sorted = true;
+
+            for(int i = 1; i < nums.length; i++) {
+                if (nums[i] > nums[i - 1]) {
+                    int temp = nums[i];
+                    nums[i] = nums[i - 1];
+                    nums[i - 1] = temp;
+
+                    sorted = false;
+                }
+            }
+        }
+    }
+
+
+9. Discuss how you could represent a table of related records using a multidimensional array.
+
+    Have a class defined, eg 'Record', and have this in a 2D record array:
+
+        Record[][] records = new Record[size_a][size_b];
+
+
+10. Declare and create a multidimensional array to hold the first and last names of 10 people.
+
+    String[][] names = new String[10][2];
+
+
+
+11. Declare and create a 10 x 10 multidimensional array of doubles.
+
+    double[][] doubles = new double[10][10];
+
+
+12. Initialize the array created in number 11 above to -1.0.
+
+    for (int i = 0; i < 10; i++)
+        for (int j = 0; j < 10; j++)
+            doubles[i][j] = -1.0;
+
+
+13. Write a complete Java console application that prompts the user for a series of quiz scores. The user should type -1 to signify that the input of quiz scores is complete. Your program should then average the scores and display the result back to the user.
+
+    Scanner s = new Scanner(System.in);
+        
+    double in = 0;
+    double t = 0;
+    int c = 0;
+
+    while (in != -1) {
+        System.out.print("Enter score (-1 to exit): ");
+        in = s.nextDouble();
+
+        if (in != -1) {
+            c++;
+            t += in;
+        }
+    }
+
+    System.out.println("Average score is : " + (t / c));
+
+
+
+14. Write Java statements to create a collection of integers, and to initialize each element of the collection to -1 using a for each statement.
+
+    int[] ints = new int[10];
+
+    for (int i = 0; i < ints.length; i++) {
+        i = -1;
+    }
+
+
+15. Create a Java method that will take any number of double arguments and return the smallest of the group.
+
+    public static double min(double... values) {
+        double min = values[0];
+
+        for (int i = 1; i < values.length; i++) {
+            if (values[i] < min) min = values[i];
+        }
+
+        return min;
+    }
+
+
+16. Write a Java statement that creates an enumerated type called months that contains the twelve different months in a year.
+
+    String[] months = new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+
+
+17. Write a Java statement that prints the month July to the console window from the enumerated list crated in question above.
+
+    System.out.println(months[6]);
+
+
+Output of first code:
+    0 2 4 6 8 10 12 14 16 18
+
+
+Output of second code:
+    0 1 2 3 4 5 6 7 8 9
+
